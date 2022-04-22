@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		D8B47A992813754200E9B8E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B47A982813754200E9B8E1 /* AppDelegate.swift */; };
 		D8B47A9B2813754200E9B8E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B47A9A2813754200E9B8E1 /* SceneDelegate.swift */; };
-		D8B47A9D2813754200E9B8E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B47A9C2813754200E9B8E1 /* ViewController.swift */; };
-		D8B47AA02813754200E9B8E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B47A9E2813754200E9B8E1 /* Main.storyboard */; };
 		D8B47AA22813754500E9B8E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B47AA12813754500E9B8E1 /* Assets.xcassets */; };
 		D8B47AA52813754500E9B8E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B47AA32813754500E9B8E1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,11 +17,10 @@
 		D8B47A952813754200E9B8E1 /* ExercisesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExercisesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B47A982813754200E9B8E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B47A9A2813754200E9B8E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D8B47A9C2813754200E9B8E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D8B47A9F2813754200E9B8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8B47AA12813754500E9B8E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8B47AA42813754500E9B8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8B47AA62813754500E9B8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8FB32022813770300B78BE0 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +37,7 @@
 		D8B47A8C2813754200E9B8E1 = {
 			isa = PBXGroup;
 			children = (
+				D8FB32022813770300B78BE0 /* Modules */,
 				D8B47A972813754200E9B8E1 /* ExercisesApp */,
 				D8B47A962813754200E9B8E1 /* Products */,
 			);
@@ -58,8 +56,6 @@
 			children = (
 				D8B47A982813754200E9B8E1 /* AppDelegate.swift */,
 				D8B47A9A2813754200E9B8E1 /* SceneDelegate.swift */,
-				D8B47A9C2813754200E9B8E1 /* ViewController.swift */,
-				D8B47A9E2813754200E9B8E1 /* Main.storyboard */,
 				D8B47AA12813754500E9B8E1 /* Assets.xcassets */,
 				D8B47AA32813754500E9B8E1 /* LaunchScreen.storyboard */,
 				D8B47AA62813754500E9B8E1 /* Info.plist */,
@@ -127,7 +123,6 @@
 			files = (
 				D8B47AA52813754500E9B8E1 /* LaunchScreen.storyboard in Resources */,
 				D8B47AA22813754500E9B8E1 /* Assets.xcassets in Resources */,
-				D8B47AA02813754200E9B8E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +133,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8B47A9D2813754200E9B8E1 /* ViewController.swift in Sources */,
 				D8B47A992813754200E9B8E1 /* AppDelegate.swift in Sources */,
 				D8B47A9B2813754200E9B8E1 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +141,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D8B47A9E2813754200E9B8E1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8B47A9F2813754200E9B8E1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D8B47AA32813754500E9B8E1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +278,9 @@
 				INFOPLIST_FILE = ExercisesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +290,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,9 +306,9 @@
 				INFOPLIST_FILE = ExercisesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +318,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
