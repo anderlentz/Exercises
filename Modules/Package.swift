@@ -9,18 +9,15 @@ let package = Package(
         .iOS(.v14)
     ],
     products: [
-        .library(
-            name: "Modules",
-            targets: ["Modules"]),
+        .library(name: "Feature-Exercises", targets: ["Feature-Exercises"]),
     ],
-    dependencies: [
-    ],
+    dependencies: [],
     targets: [
         .target(
-            name: "Modules",
+            name: "Feature-Exercises",
             dependencies: []),
         .testTarget(
-            name: "ModulesTests",
-            dependencies: ["Modules"]),
+            name: "Feature-ExercisesTests",
+            dependencies: ["Feature-Exercises"]),
     ]
 )

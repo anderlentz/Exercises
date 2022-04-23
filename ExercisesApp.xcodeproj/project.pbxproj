@@ -11,7 +11,7 @@
 		D8B47A9B2813754200E9B8E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B47A9A2813754200E9B8E1 /* SceneDelegate.swift */; };
 		D8B47AA22813754500E9B8E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B47AA12813754500E9B8E1 /* Assets.xcassets */; };
 		D8B47AA52813754500E9B8E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B47AA32813754500E9B8E1 /* LaunchScreen.storyboard */; };
-		D8FB3205281378E700B78BE0 /* Modules in Frameworks */ = {isa = PBXBuildFile; productRef = D8FB3204281378E700B78BE0 /* Modules */; };
+		D8FED37028137B54001658F7 /* Feature-Exercises in Frameworks */ = {isa = PBXBuildFile; productRef = D8FED36F28137B54001658F7 /* Feature-Exercises */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		D8B47AA12813754500E9B8E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8B47AA42813754500E9B8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8B47AA62813754500E9B8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8FB32022813770300B78BE0 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
+		D8FED36E28137A92001658F7 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,7 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8FB3205281378E700B78BE0 /* Modules in Frameworks */,
+				D8FED37028137B54001658F7 /* Feature-Exercises in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +39,7 @@
 		D8B47A8C2813754200E9B8E1 = {
 			isa = PBXGroup;
 			children = (
-				D8FB32022813770300B78BE0 /* Modules */,
+				D8FED36E28137A92001658F7 /* Modules */,
 				D8B47A972813754200E9B8E1 /* ExercisesApp */,
 				D8B47A962813754200E9B8E1 /* Products */,
 				D8FB3203281378E700B78BE0 /* Frameworks */,
@@ -90,7 +90,7 @@
 			);
 			name = ExercisesApp;
 			packageProductDependencies = (
-				D8FB3204281378E700B78BE0 /* Modules */,
+				D8FED36F28137B54001658F7 /* Feature-Exercises */,
 			);
 			productName = ExercisesApp;
 			productReference = D8B47A952813754200E9B8E1 /* ExercisesApp.app */;
@@ -359,9 +359,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D8FB3204281378E700B78BE0 /* Modules */ = {
+		D8FED36F28137B54001658F7 /* Feature-Exercises */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Modules;
+			productName = "Feature-Exercises";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
