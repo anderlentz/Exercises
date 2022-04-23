@@ -1,9 +1,5 @@
+import Combine
 import UIKit
-
-struct Exercise: Hashable {
-    let title: String
-    let image: Data?
-}
 
 public class ExercisesViewController: UICollectionViewController {
     
@@ -12,6 +8,7 @@ public class ExercisesViewController: UICollectionViewController {
     private typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Exercise>
     
     private var dataSource: DataSource?
+    private var cancellables: Set<AnyCancellable> = []
     
     public init(viewModel: ExercisesViewModel) {
         self.viewModel = viewModel
@@ -27,6 +24,14 @@ public class ExercisesViewController: UICollectionViewController {
         title = "Exercises"
         navigationController?.navigationBar.prefersLargeTitles = true
         configureCollectionView()
+        viewModel.loadExercises()
+        
+        viewModel
+            .$exercises
+            .sink { [weak self] exercises in
+                self?.applySnapshot(from: exercises)
+            }
+            .store(in: &cancellables)
     }
     
     private func configureCollectionView() {
@@ -37,8 +42,9 @@ public class ExercisesViewController: UICollectionViewController {
         let registration = UICollectionView.CellRegistration<UICollectionViewListCell, Exercise> { cell, indexPath, exercise in
             var content = cell.defaultContentConfiguration()
             content.text = exercise.title
-            if let data = exercise.image {
-                content.image = UIImage(data: data)
+            if let data = exercise.image,
+                let image = UIImage(data: data) {
+                content.image = image
             } else {
                 content.image = UIImage(named: "default-placeholder")
             }

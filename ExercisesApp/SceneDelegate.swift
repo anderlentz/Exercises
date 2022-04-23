@@ -5,8 +5,19 @@
 //  Created by Anderson Lentz on 22/04/22.
 //
 
-import UIKit
+import Combine
 import Feature_Exercises
+import UIKit
+
+class RemoteExerciseLoader: ExercisesLoaderProtocol {
+    func load() -> AnyPublisher<[Exercise], Error> {
+        Just([])
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
+    
+    
+}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        let viewModel = ExercisesViewModel()
+        let viewModel = ExercisesViewModel(exercisesLoader: RemoteExerciseLoader())
         
         
         /// 1. Capture the scene
