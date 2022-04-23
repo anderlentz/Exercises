@@ -70,7 +70,7 @@ public class ExercisesViewController: UICollectionViewController {
     }
     
     private static func createLayout() -> UICollectionViewLayout {
-        let appearance = UICollectionLayoutListConfiguration.Appearance.insetGrouped
+        let appearance = UICollectionLayoutListConfiguration.Appearance.plain
         return UICollectionViewCompositionalLayout { section, layoutEnvironment in
             var config = UICollectionLayoutListConfiguration(appearance: appearance)
             config.backgroundColor = .clear

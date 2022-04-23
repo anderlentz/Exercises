@@ -12,7 +12,7 @@ final class ExercisesViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_shouldCallLoadExercises() {
         let exercisesLoadSpy = ExercisesLoaderSpy(
-            result: .complete(with: .success([.init(title: "MockExercise")]))
+            result: .complete(with: .success([.init(id: 0, title: "MockExercise")]))
         )
         let viewModel = ExercisesViewModel(exercisesLoader: exercisesLoadSpy)
         let sut = ExercisesViewController(viewModel: viewModel)
@@ -24,8 +24,8 @@ final class ExercisesViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_whenLoadedExercises_shouldUpdateCollection() {
         let exercises: [Exercise] = [
-            .init(title: "MockExercise0"),
-            .init(title: "MockExercise1", image: Data())
+            .init(id: 0, title: "MockExercise0"),
+            .init(id: 1, title: "MockExercise1", image: Data())
         ]
         let exercisesLoadSpy = ExercisesLoaderSpy(
             result: .complete(with: .success(exercises))

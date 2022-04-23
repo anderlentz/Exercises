@@ -11,6 +11,7 @@
 		D8B47A9B2813754200E9B8E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B47A9A2813754200E9B8E1 /* SceneDelegate.swift */; };
 		D8B47AA22813754500E9B8E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B47AA12813754500E9B8E1 /* Assets.xcassets */; };
 		D8B47AA52813754500E9B8E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B47AA32813754500E9B8E1 /* LaunchScreen.storyboard */; };
+		D8D47539281394B0000A2B10 /* ExercisesDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D47538281394AF000A2B10 /* ExercisesDependencies.swift */; };
 		D8FED37028137B54001658F7 /* Feature-Exercises in Frameworks */ = {isa = PBXBuildFile; productRef = D8FED36F28137B54001658F7 /* Feature-Exercises */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		D8B47AA12813754500E9B8E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8B47AA42813754500E9B8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8B47AA62813754500E9B8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D47538281394AF000A2B10 /* ExercisesDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesDependencies.swift; sourceTree = "<group>"; };
 		D8FED36E28137A92001658F7 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 		D8B47A972813754200E9B8E1 /* ExercisesApp */ = {
 			isa = PBXGroup;
 			children = (
+				D8D4753728139495000A2B10 /* Dependencies */,
 				D8B47A982813754200E9B8E1 /* AppDelegate.swift */,
 				D8B47A9A2813754200E9B8E1 /* SceneDelegate.swift */,
 				D8B47AA12813754500E9B8E1 /* Assets.xcassets */,
@@ -64,6 +67,14 @@
 				D8B47AA62813754500E9B8E1 /* Info.plist */,
 			);
 			path = ExercisesApp;
+			sourceTree = "<group>";
+		};
+		D8D4753728139495000A2B10 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				D8D47538281394AF000A2B10 /* ExercisesDependencies.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		D8FB3203281378E700B78BE0 /* Frameworks */ = {
@@ -148,6 +159,7 @@
 			files = (
 				D8B47A992813754200E9B8E1 /* AppDelegate.swift in Sources */,
 				D8B47A9B2813754200E9B8E1 /* SceneDelegate.swift in Sources */,
+				D8D47539281394B0000A2B10 /* ExercisesDependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
