@@ -78,3 +78,12 @@ public class ExercisesViewController: UICollectionViewController {
         }
     }
 }
+
+extension ExercisesViewController {
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let exercise = dataSource?.itemIdentifier(for: indexPath) else { return }
+                
+        let viewModel: ExerciseDetailsViewModel = .init(title: exercise.title)
+        navigationController?.pushViewController(ExerciseDetailsViewController(viewModel: viewModel), animated: true)
+    }
+}
