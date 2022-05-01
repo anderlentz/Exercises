@@ -81,23 +81,6 @@ struct ExercisesDependencies {
                 }
                 .collect()
                 .eraseToAnyPublisher()
-            
-            
-//            return URLSession
-//                .shared
-//                .dataTaskPublisher(for: url)
-//                .tryMap() { element -> Data in
-//                    guard let httpResponse = element.response as? HTTPURLResponse,
-//                        httpResponse.statusCode == 200 else {
-//                            throw URLError(.badServerResponse)
-//                        }
-//                    return element.data
-//                }
-//                .decode(type: ExerciseResult.self, decoder: JSONDecoder())
-//                .map { result in
-//                    return result.results.map { Exercise(id: $0.id, title: $0.name) }
-//                }
-//                .eraseToAnyPublisher()
         }
     }
     

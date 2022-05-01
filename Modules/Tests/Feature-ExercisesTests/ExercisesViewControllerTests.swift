@@ -5,7 +5,7 @@ import XCTest
 final class ExercisesViewControllerTests: XCTestCase {
     
     func test_init_shouldNotDisplayExercices() {
-        let viewModel = ExercisesViewModel(exercisesLoader: ExercisesLoaderSpy(), onExerciseVariationSelected: { _ in })
+        let viewModel = ExercisesViewModel(exercisesLoader: ExercisesLoaderSpy(), imageLoader: FakeImageLoader(), onExerciseVariationSelected: { _ in })
         let sut = ExercisesViewController(viewModel: viewModel)
         
         XCTAssertEqual(sut.numberOfItems, 0)
@@ -17,6 +17,7 @@ final class ExercisesViewControllerTests: XCTestCase {
         )
         let viewModel = ExercisesViewModel(
             exercisesLoader: exercisesLoadSpy,
+            imageLoader: FakeImageLoader(),
             onExerciseVariationSelected: { _ in }
         )
         let sut = ExercisesViewController(viewModel: viewModel)
@@ -36,6 +37,7 @@ final class ExercisesViewControllerTests: XCTestCase {
         )
         let viewModel = ExercisesViewModel(
             exercisesLoader: exercisesLoadSpy,
+            imageLoader: FakeImageLoader(),
             onExerciseVariationSelected: { _ in },
             mainQueue: .immediate.eraseToAnyScheduler()
         )
@@ -53,6 +55,7 @@ final class ExercisesViewControllerTests: XCTestCase {
     func test_loading() {
         let viewModel = ExercisesViewModel(
             exercisesLoader: ExercisesLoaderSpy(),
+            imageLoader: FakeImageLoader(),
             onExerciseVariationSelected: { _ in },
             mainQueue: .immediate.eraseToAnyScheduler()
         )
@@ -70,6 +73,7 @@ final class ExercisesViewControllerTests: XCTestCase {
     func test_showInfoLabel_whenHasError() {
         let viewModel = ExercisesViewModel(
             exercisesLoader: ExercisesLoaderSpy(),
+            imageLoader: FakeImageLoader(),
             onExerciseVariationSelected: { _ in },
             mainQueue: .immediate.eraseToAnyScheduler()
         )

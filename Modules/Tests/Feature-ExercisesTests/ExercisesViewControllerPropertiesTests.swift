@@ -9,6 +9,7 @@ final class ExercisesViewControllerPropertiesTests: XCTestCase {
         let sut = ExercisesViewController(
             viewModel: .init(
                 exercisesLoader: ExercisesLoaderSpy(),
+                imageLoader: FakeImageLoader(),
                 onExerciseVariationSelected: { _ in }
             )
         )

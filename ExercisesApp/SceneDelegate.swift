@@ -1,12 +1,6 @@
-//
-//  SceneDelegate.swift
-//  ExercisesApp
-//
-//  Created by Anderson Lentz on 22/04/22.
-//
-
 import Combine
 import Feature_Exercises
+import Shared_DataLoader
 import SwiftUI
 import UIKit
 
@@ -26,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController = UINavigationController(
             rootViewController: ExercisesComposer.composedWith(
                 exercisesLoader: ExercisesDependencies.RemoteExercisesLoader(),
+                remoteImageLoader: RemoteImageLoader(),
                 onExerciseVariationSelected: showDetails(for: )
             )
         )
@@ -76,6 +71,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController?.pushViewController(
             ExerciseDetailsComposer.composedWith(
                 exercise: exercise,
+                remoteImageLoader: RemoteImageLoader(),
                 onExerciseVariationSelected: showDetails(for: ),
                 exercisesLoader: variationExercisesLoader
             ),

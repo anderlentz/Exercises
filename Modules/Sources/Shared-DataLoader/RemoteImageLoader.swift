@@ -1,7 +1,11 @@
 import Foundation
 import Combine
 
-public struct RemoteImageLoader {
+public protocol ImageLoader {
+    var load: (_ url: URL) -> AnyPublisher<Data,Error> { get set }
+}
+
+public struct RemoteImageLoader: ImageLoader {
     
     public init() { }
     

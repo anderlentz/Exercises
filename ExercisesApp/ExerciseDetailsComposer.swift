@@ -11,12 +11,11 @@ public protocol VariationExercisesLoaderProtocol: ExercisesLoaderProtocol {
 public final class ExerciseDetailsComposer {
     public static func composedWith(
         exercise: Exercise,
-//        remoteImageLoader: RemoteImageLoader,
+        remoteImageLoader: ImageLoader,
         onExerciseVariationSelected: @escaping (Exercise) -> Void,
         exercisesLoader: VariationExercisesLoaderProtocol
     ) -> ExerciseDetailsViewController {
         let viewModel = ExerciseDetailsViewModel(title: exercise.title)
-//        let imageURLs
         
         let imagePaths = exercise.imagePaths.compactMap { $0 }
         
@@ -28,7 +27,11 @@ public final class ExerciseDetailsComposer {
             )
         )
         
-        let exercisesViewModel = ExercisesViewModel(exercisesLoader: exercisesLoader, onExerciseVariationSelected: onExerciseVariationSelected)
+        let exercisesViewModel = ExercisesViewModel(
+            exercisesLoader: exercisesLoader,
+            imageLoader: remoteImageLoader,
+            onExerciseVariationSelected: onExerciseVariationSelected
+        )
         let exerciseViewController = ExercisesViewController(viewModel: exercisesViewModel)
         
         return ExerciseDetailsViewController(

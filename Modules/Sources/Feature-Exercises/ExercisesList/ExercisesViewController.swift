@@ -109,17 +109,8 @@ public class ExercisesViewController: UICollectionViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(collectionView)
 
-        let registration = UICollectionView.CellRegistration<UICollectionViewListCell, Exercise> { cell, indexPath, exercise in
-            var content = cell.defaultContentConfiguration()
-            content.text = exercise.title
-            if let data = exercise.image,
-                let image = UIImage(data: data) {
-                content.image = image
-            } else {
-                content.image = UIImage(named: "default-placeholder")
-            }
-            content.imageProperties.maximumSize = CGSize(width: 30, height: 30)
-            cell.contentConfiguration = content
+        let registration = UICollectionView.CellRegistration<CustomCell, Exercise> { cell, indexPath, exercise in
+            cell.viewModel = CustomCellViewModel(exercise: exercise, imageLoader: self.viewModel.imageLoader)
         }
         
         dataSource = UICollectionViewDiffableDataSource<Int, Exercise>(
