@@ -10,14 +10,35 @@ let package = Package(
     ],
     products: [
         .library(name: "Feature-Exercises", targets: ["Feature-Exercises"]),
+        .library(name: "CoreUI", targets: ["CoreUI"])
     ],
     dependencies: [],
     targets: [
         .target(
             name: "Feature-Exercises",
-            dependencies: []),
+            dependencies: [
+                "CoreUI",
+                "Shared-DataLoader",
+                .product(name: "CombineSchedulers", package: "combine-schedulers")
+            ]
+        ),
         .testTarget(
             name: "Feature-ExercisesTests",
-            dependencies: ["Feature-Exercises"]),
+            dependencies: ["Feature-Exercises"]
+        ),
+        .target(
+            name: "CoreUI",
+            dependencies: [
+                "Shared-DataLoader"
+            ]
+        ),
+        .testTarget(
+            name: "CoreUI-Tests",
+            dependencies: ["CoreUI"]
+        ),
+        .target(
+            name: "Shared-DataLoader",
+            dependencies: []
+        ),
     ]
 )
