@@ -15,7 +15,8 @@ public struct CarrouselView: View {
         TabView {
             showImages()
         }
-        .tabViewStyle(PageTabViewStyle())
+        .tabViewStyle(.page)
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
     
     private func showImages() -> some View {
@@ -23,7 +24,7 @@ public struct CarrouselView: View {
             if viewModel.imageURLs.count > 0 {
                 ForEach(viewModel.imageURLs, id: \.absoluteString) { imageURL in
                     ZStack {
-                        Color.clear
+                        Color.white
                         AsyncImage(
                             url: imageURL,
                             viewModel: .init(imageLoader: RemoteImageLoader()),
