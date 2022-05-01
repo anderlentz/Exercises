@@ -9,11 +9,28 @@ let package = Package(
         .iOS(.v14)
     ],
     products: [
+        .library(name: "Feature-ExerciseDetails", targets: ["Feature-ExerciseDetails"]),
         .library(name: "Feature-Exercises", targets: ["Feature-Exercises"]),
         .library(name: "CoreUI", targets: ["CoreUI"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(
+            url: "https://github.com/pointfreeco/combine-schedulers",
+            from: "0.5.3"
+          )
+    ],
     targets: [
+        .target(
+            name: "Feature-ExerciseDetails",
+            dependencies: [
+                "CoreUI",
+                "Shared-DataLoader"
+            ]
+        ),
+        .testTarget(
+            name: "Feature-ExerciseDetailsTests",
+            dependencies: ["Feature-ExerciseDetails"]
+        ),
         .target(
             name: "Feature-Exercises",
             dependencies: [

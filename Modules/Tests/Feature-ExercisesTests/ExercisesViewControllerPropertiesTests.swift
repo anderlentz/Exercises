@@ -7,7 +7,10 @@ final class ExercisesViewControllerPropertiesTests: XCTestCase {
     
     func test_didLoad_setTitle() {
         let sut = ExercisesViewController(
-            viewModel: .init(exercisesLoader: ExercisesLoaderSpy())
+            viewModel: .init(
+                exercisesLoader: ExercisesLoaderSpy(),
+                onExerciseVariationSelected: { _ in }
+            )
         )
         
         sut.viewDidLoad()

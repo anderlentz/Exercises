@@ -7,17 +7,15 @@
 
 import Combine
 import Feature_Exercises
+import SwiftUI
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var navigationController: UINavigationController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        let viewModel = ExercisesViewModel(
-            exercisesLoader: ExercisesDependencies.RemoteExercisesLoader()
-        )
         
         /// 1. Capture the scene
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -25,8 +23,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
         let window = UIWindow(windowScene: windowScene)
         
+        navigationController = UINavigationController(
+            rootViewController: ExercisesComposer.composedWith(
+                exercisesLoader: ExercisesDependencies.RemoteExercisesLoader(),
+                onExerciseVariationSelected: showDetails(for: )
+            )
+        )
+        
         /// 4. Set the root view controller of the window with your view controller
-        window.rootViewController = UINavigationController(rootViewController: ExercisesViewController(viewModel: viewModel))
+        window.rootViewController = navigationController
+//        window.rootViewController = UIHostingController(rootView: CarrouselView())
         
         /// 5. Set the window and call makeKeyAndVisible()
         self.window = window
@@ -61,6 +67,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    private func showDetails(for exercise: Exercise) {
+        
+        let variationExercisesLoader = ExercisesDependencies.VariationExercisesLoader(
+            exerciseIDs: exercise.variations.compactMap { $0 }
+        )
+        
+        navigationController?.pushViewController(
+            ExerciseDetailsComposer.composedWith(
+                exercise: exercise,
+                onExerciseVariationSelected: showDetails(for: ),
+                exercisesLoader: variationExercisesLoader
+            ),
+            animated: true
+        )
+    }
 }
 
